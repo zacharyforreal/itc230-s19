@@ -1,4 +1,4 @@
-let movies = [
+let movieCollections = [
     {title:"No Country for Old Men",releasedate:"2007",IMDBRating:"8.1"},
     {title:"Manchester by the Sea",releasedate:"2016",IMDBRating:"7.8"},
     {title:"Three Billboards Outside Ebbing, Missouri",releasedate:"2008",IMDBRating:"8.2"},
@@ -26,9 +26,10 @@ exports.delete = (title) => {
     let foundIndex = movieCollections.findIndex((title) => {
 // return movie.title === 'The Mule';
 //array.splice(start, deleteCount[, title[, releasedate[,IMDBRating]]]
-    movieCollections.splice(foundIndex, 1); // removes 5nd item in the movieCollections array
-});
+    });
 console.log(foundIndex);
+    movieCollections.splice(foundIndex, 1); // removes 5nd item in the movieCollections array
+    return foundIndex;
 //     var deleteItem = movieCollections.findItem((movies) => {
 //     if (deleteItem >= -1) {
 //     movieCollections.splice(deleteItem, 1);

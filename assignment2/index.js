@@ -55,9 +55,16 @@ http.createServer((req,res) => {
     case '/delete':
       console.log('Deleted action')
       var deleteItem = movies.delete(movie.title);
-      let result = (deleteItem) ? JSON.stringify(deleteItem) : "Not found"
+      //console.log("A1")
+      let result = deleteItem;
+      if (result = (deleteItem > -1)) {
+      // let result = (deleteItem > -1) ? JSON.stringify(deleteItem) : "Not found"
       res.writeHead(200, {'Content-Type': 'text/plain'});
-      res.end("The movie " + JSON.stringify(deleteItem) + " has been deleted."); 
+      res.end("The movie " + movie.title + " has been deleted."); 
+      } else {
+      res.writeHead(200, {'Content-Type': 'text/plain'});
+      res.end("We can not find this movie. ");  
+      }
       break;
       
     //add movie to the array 
