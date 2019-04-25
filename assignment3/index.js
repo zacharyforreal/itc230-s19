@@ -1,7 +1,12 @@
- 
+'use strict'
+
+
 const qs = require("querystring");
 const http = require("http"), fs = require('fs');
 const movies = require('./lib/movies.js');
+
+const express = require("express");
+const app = express();
 
 
 http.createServer((req,res) => {
